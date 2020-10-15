@@ -10,7 +10,7 @@ volumes:
 
 services:
   iconexporter:
-    image: insightinfrastructure/icon-network-exporter:v0.2.0
+    image: insightinfrastructure/icon-network-exporter:v0.4.0
     container_name: icon-network-exporter
     restart: unless-stopped
     expose:
