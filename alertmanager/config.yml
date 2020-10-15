@@ -1,0 +1,15 @@
+route:
+    receiver: 'slack'
+    
+receivers:
+    - name: 'slack'
+      slack_configs:
+          - send_resolved: true
+            text: "{{ .CommonAnnotations.description }}"
+            username: 'Prometheus'
+            channel: alerts-icon
+            api_url: https://hooks.slack.com/services/XXXX/XXXX/XXXXXXXX
+            
+    - name: pagerduty
+      pagerduty_configs:
+        - service_key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
