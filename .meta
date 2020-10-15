@@ -1,0 +1,5 @@
+{
+  "projects": {
+    "modules/icon-network-exporter": "https://github.com/insight-icon/icon-network-exporter"
+  }
+}
