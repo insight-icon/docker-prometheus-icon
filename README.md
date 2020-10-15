@@ -28,3 +28,5 @@ Includes:
 - [cachet-docker](https://github.com/insight-icon/cachet-docker)
 - [terraform-icon-monitor-aws-cachet](https://github.com/insight-icon/terraform-icon-monitor-aws-cachet)
 - [terragrunt-icon-monitor](https://github.com/insight-icon/terragrunt-icon-monitor)
+
+![](static/dashboard-1.png)
