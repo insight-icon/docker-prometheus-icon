@@ -16,6 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 3,
+  "iteration": 1603579690852,
   "links": [],
   "panels": [
     {
@@ -50,6 +51,10 @@
       },
       "id": 22,
       "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -57,13 +62,12 @@
           "fields": "",
           "values": false
         },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        "textMode": "auto"
       },
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "icon_total_active_main_preps",
+          "expr": "icon_total_active_main_preps{network_name=\"$network_name\"}",
           "interval": "",
           "legendFormat": " ",
           "refId": "A"
@@ -72,7 +76,7 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Active Main P-Reps",
-      "type": "gauge"
+      "type": "stat"
     },
     {
       "datasource": null,
@@ -120,7 +124,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "icon_total_active_sub_preps",
+          "expr": "icon_total_active_sub_preps{network_name=\"$network_name\"}",
           "interval": "",
           "legendFormat": " ",
           "refId": "A"
@@ -177,7 +181,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "icon_total_inactive_sub_preps",
+          "expr": "icon_total_inactive_sub_preps{network_name=\"$network_name\"}",
           "interval": "",
           "legendFormat": " ",
           "refId": "A"
@@ -234,7 +238,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "icon_prep_reference_block_time",
+          "expr": "icon_prep_reference_block_time{network_name=\"$network_name\"}",
           "interval": "",
           "legendFormat": " ",
           "refId": "A"
@@ -291,7 +295,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "icon_prep_reference_block_height",
+          "expr": "icon_prep_reference_block_height{network_name=\"$network_name\"}",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -346,7 +350,7 @@
       "pluginVersion": "7.1.5",
       "targets": [
         {
-          "expr": "icon_total_tx",
+          "expr": "icon_total_tx{network_name=\"$network_name\"}",
           "interval": "",
           "legendFormat": " ",
           "refId": "A"
@@ -418,7 +422,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "icon_total_active_main_preps",
+          "expr": "icon_total_active_main_preps{network_name=\"$network_name\"}",
           "format": "table",
           "hide": false,
           "instant": false,
@@ -513,7 +517,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "icon_total_tx",
+          "expr": "icon_total_tx{network_name=\"$network_name\"}",
           "interval": "",
           "legendFormat": " ",
           "refId": "A"
@@ -605,7 +609,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "icon_total_active_sub_preps",
+          "expr": "icon_total_active_sub_preps{network_name=\"$network_name\"}",
           "interval": "",
           "legendFormat": " ",
           "refId": "A"
@@ -697,7 +701,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "icon_prep_reference_block_height",
+          "expr": "icon_prep_reference_block_height{network_name=\"$network_name\"}",
           "interval": "",
           "legendFormat": " ",
           "refId": "A"
@@ -750,15 +754,68 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "testnet",
+          "value": "testnet"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "network_name",
+        "multi": false,
+        "name": "network_name",
+        "options": [
+          {
+            "selected": false,
+            "text": "mainnet",
+            "value": "mainnet"
+          },
+          {
+            "selected": true,
+            "text": "testnet",
+            "value": "testnet"
+          },
+          {
+            "selected": false,
+            "text": "zicon",
+            "value": "zicon"
+          },
+          {
+            "selected": false,
+            "text": "bicon",
+            "value": "bicon"
+          }
+        ],
+        "query": "mainnet,testnet,zicon,bicon",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
   },
   "time": {
     "from": "now-6h",
     "to": "now"
   },
-  "timepicker": {},
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
   "timezone": "",
   "title": "icon-network-dashboard-1",
   "uid": "S2vM3xcGk",
-  "version": 11
+  "version": 14
 }

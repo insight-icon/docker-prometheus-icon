@@ -9,16 +9,58 @@ volumes:
     grafana_data: {}
 
 services:
-  iconexporter:
-    image: insightinfrastructure/icon-network-exporter:v0.4.0
-    container_name: icon-network-exporter
-    restart: unless-stopped
+  mainnet:
+    image: insightinfrastructure/icon-network-exporter:v0.6.0
     expose:
       - 6100
     environment:
       network_name: mainnet
+      exporter_port: 6100
+    restart: unless-stopped
     networks:
       - monitor-net
+  zicon:
+    image: insightinfrastructure/icon-network-exporter:v0.6.0
+    expose:
+      - 6101
+    environment:
+      network_name: zicon
+      exporter_port: 6101
+  #      end_ranking: 0x22 # 34
+    restart: unless-stopped
+    networks:
+      - monitor-net
+  bicon:
+    image: insightinfrastructure/icon-network-exporter:v0.6.0
+    expose:
+      - 6102
+    environment:
+      network_name: bicon
+      exporter_port: 6102
+    restart: unless-stopped
+    networks:
+      - monitor-net
+  testnet:
+    image: insightinfrastructure/icon-network-exporter:v0.6.0
+    expose:
+      - 6103
+    environment:
+      network_name: testnet
+      exporter_port: 6103
+    restart: unless-stopped
+    networks:
+      - monitor-net
+  
+#  iconexporter:
+#    image: insightinfrastructure/icon-network-exporter:v0.4.0
+#    container_name: icon-network-exporter
+#    restart: unless-stopped
+#    expose:
+#      - 6100
+#    environment:
+#      network_name: mainnet
+#    networks:
+#      - monitor-net
   
   prometheus:
     image: prom/prometheus:v2.21.0

@@ -13,10 +13,30 @@ rule_files:
 
 # A scrape configuration containing exactly one endpoint to scrape.
 scrape_configs:
-  - job_name: 'icon_network_exporter'
+  - job_name: 'mainnet'
     scrape_interval: 5s
     static_configs:
-      - targets: ['icon-network-exporter:6100']
+      - targets: ['mainnet:6100']
+
+  - job_name: 'zicon'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['zicon:6101']
+
+  - job_name: 'bicon'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['bicon:6102']
+
+  - job_name: 'testnet'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['testnet:6103']
+
+#  - job_name: 'icon_network_exporter'
+#    scrape_interval: 5s
+#    static_configs:
+#      - targets: ['icon-network-exporter:6100']
 
   - job_name: 'nodeexporter'
     scrape_interval: 5s
